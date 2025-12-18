@@ -1,0 +1,47 @@
+#####################################
+# Environment Files
+#####################################
+.env
+.env.*
+!.env.example
+
+#####################################
+# PHP / Backend
+#####################################
+backend/vendor/
+backend/storage/logs/
+backend/storage/uploads/
+
+#####################################
+# Python
+#####################################
+face-recognition/__pycache__/
+face-recognition/*.pyc
+face-recognition/venv/
+face-recognition/.venv/
+face-recognition/models/*.pkl
+
+#####################################
+# Frontend
+#####################################
+frontend/node_modules/
+frontend/dist/
+
+#####################################
+# Logs
+#####################################
+*.log
+
+#####################################
+# OS / Editor
+#####################################
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+#####################################
+# Cache
+#####################################
+*.cache
+*.tmp
