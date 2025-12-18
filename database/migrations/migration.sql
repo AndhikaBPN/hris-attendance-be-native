@@ -156,7 +156,10 @@ CREATE TABLE `attendances` (
     `deleted` TINYINT(1) DEFAULT 0,
 
     CONSTRAINT `fk_attendance_user`
-        FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+        FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+
+    CONSTRAINT `uniq_attendance_user_date`
+        UNIQUE (`user_id`, `date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Add indexes
 CREATE INDEX idx_attendances_user_id ON `attendances` (`user_id`);
@@ -213,6 +216,9 @@ CREATE TABLE `leave_balances` (
 
     CONSTRAINT `leave_balances_user_id_fk`
         FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
+
+    CONSTRAINT `uniq_leave_user_year`
+        UNIQUE (`user_id`, `year`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Add indexes
 CREATE INDEX idx_leave_balances_user_id ON `leave_balances` (`user_id`);
